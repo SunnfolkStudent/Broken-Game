@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,21 +18,11 @@ public class PlayerMovement : MonoBehaviour
         
         transform.Translate(_moveVector * moveSpeed * Time.deltaTime);
 
-        if (_groundHit || Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (_groundHit && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
+            _groundHit = false;
         }
-        
-        /*if (_input.JumpPressed && (_collision.IsGrounded_Box() || doubleJump > 0))
-        {
-            _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpSpeed);
-            doubleJump--;
-        }
-
-        if (_collision.IsGrounded_Box())
-        {
-            doubleJump = 1;
-        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -42,10 +32,16 @@ public class PlayerMovement : MonoBehaviour
             _groundHit = true;
             print("true");
         }
-        else
+
+        if (col.gameObject.CompareTag("Death"))
         {
-            _groundHit = false;
-            print("false");
+            Application.LoadLevel(Application.loadedLevel);
         }
+        if (col.gameObject.CompareTag("EndGame"))
+        {
+            Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+
     }
 }
