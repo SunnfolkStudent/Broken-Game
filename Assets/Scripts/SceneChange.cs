@@ -12,7 +12,7 @@ public class SceneChange : MonoBehaviour
         progress = PlayerPrefs.GetInt("Progress");
         if (progress == 1)
         {
-            SceneManager.LoadScene("Level_2");
+            SceneManager.LoadScene("C_Level_1");
         }
     }
 }
