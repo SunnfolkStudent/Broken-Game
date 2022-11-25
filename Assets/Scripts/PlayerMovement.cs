@@ -46,6 +46,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+
+        if (col.gameObject.CompareTag("EndBox"))
+        {
+            Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
         
     }
 

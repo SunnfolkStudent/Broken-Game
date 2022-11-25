@@ -17,5 +17,10 @@ public class SceneChange : MonoBehaviour
         {
             SceneManager.LoadScene("C2_Level_1");
         }
+        
+        if (progress == 3)
+        {
+            SceneManager.LoadScene("C3_Level_1");
+        }
     }
 }
