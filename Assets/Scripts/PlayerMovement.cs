@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 7f;
     public float jumpForce = 8f;
     public Rigidbody2D _rigidbody2D;
+    public int progress;
 
     private Vector2 _moveVector;
     private bool _groundHit;
@@ -22,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
             _groundHit = false;
+        }
+
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            PlayerPrefs.SetInt("Progress", 0);
         }
     }
 
@@ -39,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (col.gameObject.CompareTag("EndGame"))
         {
+            progress++;
+            PlayerPrefs.SetInt("Progress", progress);
             Application.Quit();
             UnityEditor.EditorApplication.isPlaying = false;
         }
