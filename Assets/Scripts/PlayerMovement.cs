@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 8f;
     public Rigidbody2D _rigidbody2D;
     public int progress;
+    
+    [Header("Error messages")]
+    public GameObject messageInterface;
 
     private Vector2 _moveVector;
     private bool _groundHit;
@@ -46,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (col.gameObject.CompareTag("EndGame"))
         {
+            Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
             progress++;
             PlayerPrefs.SetInt("Progress", progress);
             Application.Quit();
