@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             PlayerPrefs.SetInt("Progress", 0);
+            PlayerPrefs.SetInt("errorSpawn", 0);
         }
     }
 
