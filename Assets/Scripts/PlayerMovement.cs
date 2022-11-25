@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -47,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
         if (col.gameObject.CompareTag("EndGame"))
         {
             Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
@@ -55,6 +59,5 @@ public class PlayerMovement : MonoBehaviour
             Application.Quit();
             UnityEditor.EditorApplication.isPlaying = false;
         }
-
     }
 }

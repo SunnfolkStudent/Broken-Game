@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/NormalLevels/Level_3.unity
     guid: cb4a673b9fbb34e4e9d2cee6e668aa5c
   - enabled: 1
-    path: Assets/Scenes/C_Level_1.unity
+    path: Assets/Scenes/CoruptLevels1/C_Level_1.unity
     guid: 3e3cb29eadf0ca34f97206a71783ee99
   - enabled: 1
-    path: Assets/Scenes/C_Level_2.unity
+    path: Assets/Scenes/CoruptLevels1/C_Level_2.unity
     guid: 719b8386d6ce7a445a2b5c2e583ed5c2
+  - enabled: 1
+    path: Assets/Scenes/CoruptLevels2/C2_Level_1.unity
+    guid: 577a23259d40c0a4f82b4cd29447960d
   m_configObjects: {}
