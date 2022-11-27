@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     public Image errorMessage;
+    public AudioSource error;
 
     public void LoadScene(string sceneName)
     {
@@ -24,5 +26,10 @@ public class SceneController : MonoBehaviour
     public void Destruct()
     {
         Destroy(errorMessage.gameObject);
+    }
+
+    private void Start()
+    {
+        error.Play();
     }
 }

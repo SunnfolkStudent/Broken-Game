@@ -5,9 +5,11 @@ public class SceneChange : MonoBehaviour
 {
     public int progress;
 
+
     private void Start()
     {
         progress = PlayerPrefs.GetInt("Progress");
+        
         if (progress == 1)
         {
             SceneManager.LoadScene("C_Level_1");
@@ -23,4 +25,6 @@ public class SceneChange : MonoBehaviour
             SceneManager.LoadScene("C3_Level_1");
         }
     }
+
+    
 }

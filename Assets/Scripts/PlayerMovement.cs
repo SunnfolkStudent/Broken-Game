@@ -6,10 +6,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 7f;
     public float jumpForce = 8f;
     public Rigidbody2D _rigidbody2D;
-    public int progress;
-    
-    [Header("Error messages")]
-    public GameObject messageInterface;
+
+
 
     private Vector2 _moveVector;
     private bool _groundHit;
@@ -50,20 +48,9 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.CompareTag("EndBox"))
         {
             Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
         
     }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("EndGame"))
-        {
-            Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
-            progress++;
-            PlayerPrefs.SetInt("Progress", progress);
-            Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-    }
+    
 }

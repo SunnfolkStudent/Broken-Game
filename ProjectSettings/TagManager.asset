@@ -8,6 +8,8 @@ TagManager:
   - Death
   - EndGame
   - EndBox
+  - EndGame2
+  - EndGame3
   layers:
   - Default
   - TransparentFX
