@@ -10,6 +10,8 @@ TagManager:
   - EndBox
   - EndGame2
   - EndGame3
+  - EndGame4
+  - EndGame5
   layers:
   - Default
   - TransparentFX

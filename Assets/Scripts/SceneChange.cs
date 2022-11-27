@@ -24,6 +24,16 @@ public class SceneChange : MonoBehaviour
         {
             SceneManager.LoadScene("C3_Level_1");
         }
+        
+        if (progress == 4)
+        {
+            SceneManager.LoadScene("C4_Level_1");
+        }
+
+        if (progress == 5)
+        {
+            SceneManager.LoadScene("Softlock");
+        }
     }
 
     

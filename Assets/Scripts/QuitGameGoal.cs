@@ -15,24 +15,41 @@ public class QuitGameGoal : MonoBehaviour
             Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
             progress = 1;
             PlayerPrefs.SetInt("Progress", progress);
-            Application.Quit();
-            //UnityEditor.EditorApplication.isPlaying = false;
+            GameQuit();
         }
         if (col.gameObject.CompareTag("EndGame2"))
         {
             Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
             progress = 2;
             PlayerPrefs.SetInt("Progress", progress);
-            Application.Quit();
-            //UnityEditor.EditorApplication.isPlaying = false;
+            GameQuit();
         }
         if (col.gameObject.CompareTag("EndGame3"))
         {
             Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
             progress = 3;
             PlayerPrefs.SetInt("Progress", progress);
-            Application.Quit();
-            //UnityEditor.EditorApplication.isPlaying = false;
+            GameQuit();
         }
+        if (col.gameObject.CompareTag("EndGame4"))
+        {
+            Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
+            progress = 4;
+            PlayerPrefs.SetInt("Progress", progress);
+            GameQuit();
+        }
+        if (col.gameObject.CompareTag("EndGame5"))
+        {
+            Instantiate(messageInterface, new Vector3(0, 0, 0), Quaternion.identity);
+            progress = 5;
+            PlayerPrefs.SetInt("Progress", progress);
+            GameQuit();
+        }
+    }
+
+    private void GameQuit()
+    {
+        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }
